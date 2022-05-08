@@ -1,0 +1,35 @@
+{% extends 'dashboard/admin_index.html' %}
+
+{% block admin %}
+
+
+<div class="card-content table-responsive table-full-width">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in notes %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.teacher.username }}</td>
+                <td class="td-actions">
+                    <a href="{% url 'dashboard_admin_may' pk=i.teacher.id %}" rel="tooltip" title="Qabul qilish" class="btn btn-info btn-simple btn-xs">
+                        <i class="ti-check"></i>
+                    </a>
+                    <a href="{% url 'dashboard_admin_not' nott=i.teacher.id %}" rel="tooltip" title="Be e'tibor qoldirish" class="btn btn-success btn-simple btn-xs">
+                        <i class="ti-close"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'dashboard/index.html' %}
+{% block content %}
+
+
+<div class="card-content table-responsive table-full-width">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Name</th>
+                <th>Students</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in courses %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.username }}</td>
+                <td>{{ i.student }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
