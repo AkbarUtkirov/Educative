@@ -1,0 +1,6 @@
+#### Create user
+---- python manage.py createsuperuser
+
+   username --- admin
+   email   ---  admin@nexus.uz
+   password --- 123456
